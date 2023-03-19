@@ -9,7 +9,7 @@ cookie for a specific day.
 * Apache Maven
 * Git
 
-###Clone the project on your local
+### Clone the project on your local
 
 Use the command _`git clone https://github.com/MeghaMehrotra/cookie_logs_processor`_
 to have the code base on your local
