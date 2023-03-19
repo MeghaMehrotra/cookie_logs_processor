@@ -39,7 +39,7 @@ For example:- If your fileName which contains cookie logs is cookie_logs.csv and
 then your command would be as follows
 ` java -jar target/cookie_logs_processor-0.0.1-SNAPSHOT.jar -f cookie_log.csv -d 2018-12-09`
 
-#### NOTE :- Your file Name or path should be relative to directory of the project~~~~
+#### NOTE :- Your file Name or path should be relative to resources folder in the project or should be placed under resources folder
 
 ## Output
 
