@@ -40,7 +40,7 @@ public class CookieService {
                 cookies.clear();
                 cookies.add(entry.getKey());
             }
-            if(entry.getValue() == maxValue){
+            else if(entry.getValue() == maxValue){
                 cookies.add(entry.getKey());
             }
         }

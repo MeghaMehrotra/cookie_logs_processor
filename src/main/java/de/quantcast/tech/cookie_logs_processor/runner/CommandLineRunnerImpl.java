@@ -1,6 +1,5 @@
 package de.quantcast.tech.cookie_logs_processor.runner;
 
-import de.quantcast.tech.cookie_logs_processor.CookieLogsProcessorApplication;
 import de.quantcast.tech.cookie_logs_processor.model.Cookie;
 import de.quantcast.tech.cookie_logs_processor.service.CSVFileParser;
 import de.quantcast.tech.cookie_logs_processor.service.CookieService;
@@ -11,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import javax.swing.text.Style;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.List;
@@ -19,15 +19,15 @@ import java.util.List;
  * @author mmehrotra
  */
 @Component
-public class CookieCommandLineRunner implements CommandLineRunner {
+public class CommandLineRunnerImpl implements CommandLineRunner {
 
-    private static final Logger logger = LogManager.getLogger(CookieCommandLineRunner.class);
+    private static final Logger logger = LogManager.getLogger(CommandLineRunnerImpl.class);
 
     private final CookieService cookieService;
     private final CSVFileParser csvFileParser;
 
     @Autowired
-    public CookieCommandLineRunner(CookieService cookieService, CSVFileParser csvFileParser) {
+    public CommandLineRunnerImpl(CookieService cookieService, CSVFileParser csvFileParser) {
         this.cookieService = cookieService;
         this.csvFileParser = csvFileParser;
     }
@@ -76,7 +76,7 @@ public class CookieCommandLineRunner implements CommandLineRunner {
             //get most active cookies
             List<String> cookies = cookieService.findMostActiveCookies(date,cookieList);
 
-            cookies.forEach(cookie -> logger.info("\n"+cookie));
+            cookies.forEach(cookie -> System.out.println(cookie));
         };
 
 }
